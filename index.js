@@ -17,7 +17,7 @@ app.use(cors({
 //     res.json(bairros[9]);
 // })
 
-require('./src/Routes/index')(app);
+require('./src/Routes/index.js')(app);
 
 app.listen(port, () => {
     console.log("Servidor rodando");
