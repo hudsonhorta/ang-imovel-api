@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: 'https://ang-imovel.herokuapp.com/'
+    origin: 'https://ang-imovel.herokuapp.com'
 }))
 
 const cidades = require("./dados/cidades.json");
