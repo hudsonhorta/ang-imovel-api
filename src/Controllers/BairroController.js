@@ -1,0 +1,26 @@
+exports.post = (req, res, next) => {
+    res.status(201).send('Rota POST!');
+ };
+  
+ exports.put = (req, res, next) => {
+    let id = req.params.id;
+    res.status(201).send(`Rota PUT com ID! --> ${id}`);
+ };
+  
+ exports.delete = (req, res, next) => {
+    let id = req.params.id;
+    res.status(200).send(`Rota DELETE com ID! --> ${id}`);
+ };
+  
+ exports.get = (req, res, next) => {
+
+    const bairros = require("./../dados/bairros.json");
+    let id = req.params.id;
+    res.status(200).send(bairros[id]);
+ };
+  
+ exports.getById = (req, res, next) => {
+   const bairros = require("./../dados/bairros.json");
+   let id = req.params.id;
+   res.status(200).send(bairros[id]);
+};
