@@ -7,11 +7,17 @@ app.use(cors({
     origin: 'https://ang-imovel.herokuapp.com'
 }))
 
-const cidades = require("./dados/cidades.json");
+//const bairros = require("./dados/bairros.json");
 
-app.get("/cidades", (req, res) => {
-    res.json(cidades);
-})
+// app.get("/cidades", (req, res) => {
+//     res.json(cidades);
+// })
+
+// app.get("/bairros", (req, res) => {
+//     res.json(bairros[9]);
+// })
+
+require('./src/Routes/index')(app);
 
 app.listen(port, () => {
     console.log("Servidor rodando");
