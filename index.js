@@ -1,12 +1,16 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors({
+    origin: 'https://ang-imovel.herokuapp.com/'
+}))
 
 const cidades = require("./dados/cidades.json");
 
 app.get("/cidades", (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    return res.json(cidades);
+    res.json(cidades);
 })
 
 app.listen(port, () => {
