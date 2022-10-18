@@ -1,7 +1,11 @@
 const express = require("express");
 const cors = require("cors");
-const app = express();
 const port = process.env.PORT || 3000;
+const app = express();
+
+require('./src/Routes/index')(app)
+
+app.use(express.json());
 
 app.use(cors({
     origin: 'https://ang-imovel.herokuapp.com'
@@ -17,7 +21,6 @@ app.use(cors({
 //     res.json(bairros[9]);
 // })
 
-require('./src/Routes/index.js')(app);
 
 app.listen(port, () => {
     console.log("Servidor rodando");
