@@ -19,7 +19,7 @@ const bairros = require('./src/Routes/BairrosRoute')
 app.use('/', cidades)
 app.use('/', bairros)
 
-app.post('/login', (req, res) => {
+app.post('/token', (req, res) => {
     if (req.body.user === 'hudson' && req.body.password === '123456') {
         const token = jwt.sign({
                 userId: 1
