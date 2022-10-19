@@ -1,3 +1,5 @@
+const { verify } = require("jsonwebtoken");
+
 exports.post = (req, res, next) => {
     res.status(201).send('Rota POST!');
  };
